@@ -63,11 +63,15 @@
           // No need to change anything ABOVE this line ^
 
           return(
+            // Bug 1: Added react fragment. As you can only return a single item.
+            <> 
             <h1>Draw a Card</h1>
-            <button onClick={}>
+            {/* // Bug 2: Added method drawCard into the onClick since it was empty */}
+            <button onClick={this.drawCard}> 
               Click to Draw a Card
             </button>
-            <button onClick={shuffle}>
+            {/* Bug 3: Added this. to the method shuffle, so it can be read inside the class. */}
+            <button onClick={this.shuffle}>
               Return Cards and Shuffle Deck
             </button>
             <div style={handStyles}>
@@ -79,6 +83,7 @@
                 )
               })}
             </div>
+            </>
           )
         }
       }
